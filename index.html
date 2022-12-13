@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>たっかーのホームページ</title>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+            <h1>たっかーのホームページへようこそ！</h1>
+            </header>
+            <hr>
+            <img src="img/laputa.jpg" alt="天空の城ラピュタ" width="500" height="250">
+            <p>
+                何のおかまいもできませんが、<br>
+                どうぞごゆっくりお過ごしください。
+            </p>
+            <div class="information">
+                <div class="col-xs-6 text-left">
+                  <div id="showClock"></div>   
+            <h4>【私の自己紹介】</h4>            
+            <ul>
+             <li>好きなこと: 漫画を読むこと</li> 
+             <li>行きたいところ: 天空の城ラピュタ</li>
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13045.025890252458!2d137.08127886246845!3d35.17515969264453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600367450203d0b3%3A0x36164b7a69c5128b!2z44K444OW44Oq44OR44O844Kv!5e0!3m2!1sja!2sjp!4v1667893049078!5m2!1sja!2sjp" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </ul>
+            <h3>《趣味》</h3>
+            <p>
+                映画鑑賞
+            </p>
+            <h5> 〔リンク集〕</h5>
+            <ul>
+                <li><a href="https:// www.ghibli.jp/works/laputa/" target="_self">スタジオジブリの『天空の城ラピュタ』</a></li>    
+            </ul>
+                </div>
+            <script>
+                //*** 現在の日時を表示する *******************
+                // ゼロを追加する
+                var addZero = function(value) {
+                    if (value < 10) {
+                        value = '0' + value;
+                    }
+                    return value;
+                };        
+                timerID = setInterval('clock()', 100); //0.1秒毎にclock()を実行
+                function clock() {
+                    document.getElementById("showClock").innerHTML = getNow();
+                }
+                function getNow() {
+                    var now = new Date();
+                    var year = now.getFullYear();
+                    var month = now.getMonth() + 1; //１を足すこと
+                    month = addZero(month);
+                    var day = now.getDate();
+                    day = addZero(day);
+                    var dayOfWeek = now.getDay(); //曜日(0～6=日～土)
+                    var hour = now.getHours();
+                    hour = addZero(hour);
+                    var min = now.getMinutes();
+                    min = addZero(min);
+                    var sec = now.getSeconds();
+                    sec = addZero(sec);
+                    //曜日の選択肢
+                    var daysOfWeek = new Array("日", "月", "火", "水", "木", "金", "土");
+                    //出力用
+                    var s = "【" + year + "/" + month + "/" + day + " (" + daysOfWeek[dayOfWeek] + ") " + hour + ":" + min + ":" + sec + "】"; 
+                    return s;
+                }
+            </script> 
+            </div>  
+        </div> 
+        <h2>こんな私ですが、どうぞよろしく！</h2>
+        <div class="reference">
+            ◆ このWebページは、以下を参考にさせていただきました。
+            <ul>
+                <li>
+                    <a href="https://book.mynavi.jp/ec/products/detail/id=65861" target="_self">これからWebをはじめる人のHTML＆CSS、JavaScriptのきほんのきほん (たにぐちまこと著 マイナビ出版)</a>
+                </li>
+                <li>
+                    <a href="http://www.shurey.com/js/samples/2_msg10.html" target="_self">http://www.shurey.com/js/samples/2_msg10.html</a>
+                </li>
+            </ul>
+        </div>  
+        <hr>
+    </body>
+</html>
